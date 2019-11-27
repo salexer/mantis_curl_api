@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 require __DIR__ . '/vendor/autoload.php';
 $config = require_once 'config.php';
 if (!isset($_SERVER['PHP_AUTH_USER'])) {
