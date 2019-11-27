@@ -2,14 +2,14 @@
 class Connector {
     protected $address = 'https://mantis.globalrustrade.com/';
     protected $cookie = [
-        'MANTIS_STRING_COOKIE' => 'MANTIS_STRING_COOKIE=yIu9W4s5AlwanAFcSp6z10uNrT_wIa218eMKRaBr-609Buj8Vnk5tbkZeSY2eKrx',
+        'MANTIS_STRING_COOKIE' => 'MANTIS_STRING_COOKIE=',
         'MANTIS_PROJECT_COOKIE' => 'MANTIS_PROJECT_COOKIE=0'
     ];
     protected $cookie_cache;
 
-    public function __construct()
+    public function __construct($cookie)
     {
-
+        $this->cookie['MANTIS_STRING_COOKIE'] = 'MANTIS_STRING_COOKIE=' . $cookie;
     }
 
     public function post($url = '', $data = [], $header = false)
@@ -55,7 +55,7 @@ class Connector {
         return $html;
     }
 
-    public function addCookkie($name, $value)
+    public function addCookie($name, $value)
     {
         $this->cookie[$name] = $value;
     }
